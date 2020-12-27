@@ -1,4 +1,6 @@
+import 'package:firebase_crud_final/screens/singup.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Login extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
@@ -39,7 +41,9 @@ class Login extends StatelessWidget {
                 ),
               ),
               FlatButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(SingUp());
+                },
                 child: Text("Sing Up"),
               ),
             ],
