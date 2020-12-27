@@ -1,6 +1,8 @@
+import 'package:firebase_crud_final/cotrollers/bindings/authController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class SingUp extends StatelessWidget {
+class SingUp extends GetWidget<AuthController> {
   final TextEditingController emailController = TextEditingController();
 
   final TextEditingController passwordController = TextEditingController();
@@ -33,7 +35,10 @@ class SingUp extends StatelessWidget {
                 ),
               ),
               RaisedButton(
-                onPressed: () {},
+                onPressed: () {
+                  controller.createUser(
+                      emailController.text, passwordController.text);
+                },
                 child: Text(
                   "Sing Up",
                 ),

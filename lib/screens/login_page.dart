@@ -1,8 +1,9 @@
+import 'package:firebase_crud_final/cotrollers/bindings/authController.dart';
 import 'package:firebase_crud_final/screens/singup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Login extends StatelessWidget {
+class Login extends GetWidget<AuthController> {
   final TextEditingController emailController = TextEditingController();
 
   final TextEditingController passwordController = TextEditingController();
@@ -35,7 +36,10 @@ class Login extends StatelessWidget {
                 ),
               ),
               RaisedButton(
-                onPressed: () {},
+                onPressed: () {
+                  controller.login(
+                      emailController.text, passwordController.text);
+                },
                 child: Text(
                   "Log In",
                 ),

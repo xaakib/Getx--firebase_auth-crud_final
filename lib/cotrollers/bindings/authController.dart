@@ -14,18 +14,27 @@ class AuthController extends GetxController {
     try {
       await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
-    } catch (e) {}
+    } catch (e) {
+      Get.snackbar("Error creating account", e.message,
+          snackPosition: SnackPosition.BOTTOM);
+    }
   }
 
   void login(String email, String password) async {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
-    } catch (e) {}
+    } catch (e) {
+      Get.snackbar("Error Loggin", e.message,
+          snackPosition: SnackPosition.BOTTOM);
+    }
   }
 
   void singOut() {
     try {
       _auth.signOut();
-    } catch (e) {}
+    } catch (e) {
+      Get.snackbar("Error singout", e.message,
+          snackPosition: SnackPosition.BOTTOM);
+    }
   }
 }
