@@ -6,6 +6,7 @@ class AuthController extends GetxController {
   Rx<FirebaseUser> _firebaseUser = Rx<FirebaseUser>();
   String get user => _firebaseUser.value?.email;
   @override
+  // ignore: override_on_non_overriding_member
   void onInt() {
     _firebaseUser.bindStream(_auth.onAuthStateChanged);
   }
