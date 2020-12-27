@@ -36,6 +36,7 @@ class Crud extends StatelessWidget {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             RaisedButton(
               child: Text("Create"),
