@@ -22,8 +22,28 @@ class MyApp extends StatelessWidget {
 }
 
 class Crud extends StatelessWidget {
+  // ignore: deprecated_member_use
+  final Firestore firestore = Firestore.instance;
+  void create() async {}
+  void _read() async {}
+  void _iupdate(async) {}
+  void _delete() async {}
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("App"),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            RaisedButton(
+              child: Text("Create"),
+              onPressed: () {},
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
