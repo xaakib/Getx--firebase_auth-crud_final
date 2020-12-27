@@ -6,7 +6,6 @@ class AuthController extends GetxController {
   Rx<FirebaseUser> _firebaseUser = Rx<FirebaseUser>();
   String get user => _firebaseUser.value?.email;
   @override
-  // ignore: override_on_non_overriding_member
   void onInt() {
     _firebaseUser.bindStream(_auth.onAuthStateChanged);
   }
@@ -15,6 +14,7 @@ class AuthController extends GetxController {
     try {
       await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
+      Get.back();
     } catch (e) {
       Get.snackbar("Error creating account", e.message,
           snackPosition: SnackPosition.BOTTOM);

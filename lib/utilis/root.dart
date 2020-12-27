@@ -8,7 +8,7 @@ class Root extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      return (Get.find<AuthController>().user != null ? Home() : Login());
+      return (Get.find<AuthController>().user != null) ? Home() : Login();
     });
   }
 }
