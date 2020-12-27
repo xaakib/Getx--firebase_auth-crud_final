@@ -23,7 +23,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cloud_firestore: ^0.13.7
+  cloud_firestore: 
+  firebase_auth: 
+  get: 
 
 dev_dependencies:
   flutter_test:
